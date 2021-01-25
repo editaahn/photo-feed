@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import CardItem from "../item/CardItem";
+import ScrapContext from "../../context/scrap";
 
 const ExistingCardList = ({ list }) => {
+  const { isFiltered, scraps } = useContext(ScrapContext).state;
+  const renderedList = isFiltered
+    ? list.filter((item) => scraps.includes(item.id))
+    : list;
+
   return (
     <ul>
-      {list?.map((item) => (
+      {renderedList.map((item) => (
         <CardItem
           key={item.id}
           userName={item.nickname}
