@@ -12,7 +12,9 @@ const ScrapContext = createContext({
 
 const ScrapProvider = ({ children }) => {
   const [isFiltered, setIsFiltered] = useState(false);
-  const [scraps, setScraps] = useState([]);
+  const [scraps, setScraps] = useState(
+    JSON.parse(localStorage.getItem("scraps")) || []
+  );
 
   const value = {
     state: { isFiltered, scraps },
@@ -20,9 +22,7 @@ const ScrapProvider = ({ children }) => {
   };
 
   return (
-    <ScrapContext.Provider value={value}>
-      {children}
-    </ScrapContext.Provider>
+    <ScrapContext.Provider value={value}>{children}</ScrapContext.Provider>
   );
 };
 

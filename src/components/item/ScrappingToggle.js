@@ -13,6 +13,7 @@ const ScrappingToggle = ({ scrapped, id }) => {
           checked={scrapped}
           onChange={() => {
             actions.setScraps([...scraps, id]);
+            localStorage.setItem("scraps", JSON.stringify([...scraps, id]));
           }}
         />
       )}
