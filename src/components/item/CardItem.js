@@ -3,12 +3,12 @@ import UserInfo from "./UserInfo";
 import Photo from "./Photo";
 import ScrappingToggle from "./ScrappingToggle";
 
-const CardItem = ({ userName, userThumbnailSrc, photoSrc }) => {
+const CardItem = ({ data }) => {
   return (
     <article>
-      <UserInfo name={userName} src={userThumbnailSrc} />
-      <Photo src={photoSrc} />
-      <ScrappingToggle />
+      <UserInfo name={data.nickname} src={data.profile_image_url} />
+      <Photo src={data.image_url} />
+      <ScrappingToggle scrapped={data.scrapped} id={data.id} />
     </article>
   );
 };
