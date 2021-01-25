@@ -1,7 +1,12 @@
 import React from "react";
 
 const CardFilter = () => {
-  return <input type="checkbox"></input>;
+  return (
+    <section>
+      <input type="checkbox" />
+      <label>스크랩한 것만 보기</label>
+    </section>
+  );
 };
 
 export default CardFilter;
