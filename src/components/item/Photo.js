@@ -1,7 +1,7 @@
 import React from "react";
 
-const Photo = ({ photo }) => {
-  return <img src={photo.src} alt={photo.alt} />;
+const Photo = ({ src }) => {
+  return <img src={src} alt="" />;
 };
 
 export default Photo;
