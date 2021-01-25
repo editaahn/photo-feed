@@ -4,7 +4,11 @@ import ExistingCardList from "./ExistingCardList";
 
 const CardList = () => {
   const cardList = [];
-  return cardList.length ? <ExistingCardList list={cardList} /> : <EmptyCardList />;
+  return (
+    <section>
+      {cardList.length ? <ExistingCardList list={cardList} /> : <EmptyCardList />}
+    </section>
+  );
 };
 
 export default CardList;
