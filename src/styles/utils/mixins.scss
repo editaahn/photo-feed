@@ -36,11 +36,31 @@ $default-color: #0000005e;
     @extend .afterCheckbox;
     border-radius: 50%;
     box-sizing: border-box;
-    
   }
 
   .checkbox:checked::after {
     @extend .afterCheckbox;
     border: none;
   }
+}
+
+@mixin emptyScreen() {
+  min-height: 200px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ::before {
+    content: "💬";
+    display: block;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  p {
+    font-weight: bold;
+  }
+
 }
