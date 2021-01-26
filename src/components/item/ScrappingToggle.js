@@ -6,6 +6,11 @@ const ScrappingToggle = ({ scrapped, id }) => {
   const { scraps } = useContext(ScrapContext).state;
   const { setScraps } = useContext(ScrapContext).actions;
 
+  const onScrap = (nextArray) => {
+    setScraps(nextArray);
+    localStorage.setItem("scraps", JSON.stringify(nextArray));
+  };
+
   return (
     <div className="toggle__scrap">
       <input
@@ -14,8 +19,10 @@ const ScrappingToggle = ({ scrapped, id }) => {
         aria-label="스크랩"
         checked={scrapped}
         onChange={() => {
-          setScraps([...scraps, id]);
-          localStorage.setItem("scraps", JSON.stringify([...scraps, id]));
+          const nextArray = scrapped
+            ? scraps.filter((scrap) => scrap !== id)
+            : [...scraps, id];
+          onScrap(nextArray);
         }}
       />
     </div>
