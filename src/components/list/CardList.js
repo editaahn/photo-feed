@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import EmptyCardList from "./EmptyCardList";
+import Empty from "./Empty";
 import ExistingCardList from "./ExistingCardList";
 import ScrapContext from "../../context/scrap";
 import ListContext from "../../context/list";
@@ -31,7 +31,7 @@ const CardList = () => {
           })}
         />
       ) : (
-        <EmptyCardList />
+        <Empty text="컨텐츠가 없습니다." />
       )}
     </section>
   );
