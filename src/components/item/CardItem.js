@@ -5,7 +5,7 @@ import ScrappingToggle from "./ScrappingToggle";
 import ListContext from "../../context/list";
 import "../../styles/components/card.scss";
 
-const CardItem = ({ data, isLastOne }) => {
+const CardItem = ({ data, isLastOne, setNotice }) => {
   const { updateCards } = useContext(ListContext).actions;
 
   const targetRef = useRef(null);
@@ -18,7 +18,7 @@ const CardItem = ({ data, isLastOne }) => {
       }
       if (item.isIntersecting) {
         io.unobserve(item.target);
-        updateCards();
+        updateCards().then(({ message }) => message && setNotice(message));
       }
     });
   };

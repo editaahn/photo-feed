@@ -3,9 +3,9 @@ import "../../styles/components/card.scss";
 
 const Empty = ({ text }) => {
   return (
-    <article className="empty">
+    <section className="empty">
       <p>{text}</p>
-    </article>
+    </section>
   );
 };
 

@@ -8,32 +8,32 @@ import "../../styles/components/card.scss";
 const CardList = () => {
   const { cards } = useContext(ListContext).state;
   const { updateCards } = useContext(ListContext).actions;
-  const { scraps } = useContext(ScrapContext).state;
+  const { scraps, isFiltered } = useContext(ScrapContext).state;
 
   const [loading, setLoading] = useState(undefined);
+  const [notice, setNotice] = useState("");
 
   useEffect(() => {
     setLoading(true);
-    updateCards();
+    updateCards().then(({ message }) => message && setNotice(message));
   }, []);
 
   if (loading) {
     // 로딩 중일 때 처리
   }
-
   return (
-    <section className="cardContainer">
-      {cards.length ? (
+    <>
+      {cards.length > 0 && 
         <ExistingCardList
           list={cards.map((card) => {
             card.scrapped = scraps.includes(card.id);
             return card;
           })}
+          setNotice={setNotice}
         />
-      ) : (
-        <Empty text="컨텐츠가 없습니다." />
-      )}
-    </section>
+      }
+      {notice && !isFiltered && <Empty text={notice} />}
+    </>
   );
 };
 
