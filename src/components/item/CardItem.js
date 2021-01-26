@@ -1,9 +1,12 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useContext, useEffect } from "react";
 import UserInfo from "./UserInfo";
 import Photo from "./Photo";
 import ScrappingToggle from "./ScrappingToggle";
+import ListContext from "../../context/list";
 
 const CardItem = ({ data, isLastOne }) => {
+  const { updateCards } = useContext(ListContext).actions;
+
   const targetRef = useRef(null);
   const observerRef = useRef(null);
 
@@ -14,6 +17,7 @@ const CardItem = ({ data, isLastOne }) => {
       }
       if (item.isIntersecting) {
         io.unobserve(item.target);
+        updateCards();
       }
     });
   };
