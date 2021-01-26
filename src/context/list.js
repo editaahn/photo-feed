@@ -13,11 +13,13 @@ const ListProvider = ({ children }) => {
   const [page, setPage] = useState(1);
   const [cards, setCards] = useState([]);
 
-  const updateCards = () => {
-    requestCards(page).then(({ data }) => {
+  const updateCards = async () => {
+    const res = await requestCards(page);
+    if (res.data.length) {
       setPage(page + 1);
-      setCards(cards.concat(data));
-    });
+      setCards(cards.concat(res.data));
+    }
+    return res;
   };
 
   const value = {
