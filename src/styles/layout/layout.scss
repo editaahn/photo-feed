@@ -28,7 +28,9 @@
 .cardContainer {
   width: 100%;
   max-width: 1200px;
+  
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
   box-sizing: content-box;
