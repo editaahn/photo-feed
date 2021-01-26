@@ -26,7 +26,6 @@ const ScrapProvider = ({ children }) => {
   );
 };
 
-const { Consumer: ScrapConsumer } = ScrapContext;
-export { ScrapProvider, ScrapConsumer };
+export { ScrapProvider };
 
 export default ScrapContext;

@@ -28,7 +28,6 @@ const ListProvider = ({ children }) => {
   return <ListContext.Provider value={value}>{children}</ListContext.Provider>;
 };
 
-const { Consumer: ListConsumer } = ListContext;
-export { ListProvider, ListConsumer };
+export { ListProvider };
 
 export default ListContext;
