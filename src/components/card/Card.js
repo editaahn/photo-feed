@@ -2,10 +2,10 @@ import React, { useRef, useContext, useEffect } from "react";
 import UserInfo from "./UserInfo";
 import Photo from "./Photo";
 import ScrappingToggle from "./ScrappingToggle";
-import ListContext from "../../context/list";
+import ListContext from "../../contexts/list";
 import "../../styles/components/card.scss";
 
-const CardItem = ({ data, isLastOne, setNotice }) => {
+const Card = ({ data, isLastOne, setNotice }) => {
   const { updateCards, setLoading } = useContext(ListContext).actions;
 
   const targetRef = useRef(null);
@@ -42,4 +42,4 @@ const CardItem = ({ data, isLastOne, setNotice }) => {
   );
 };
 
-export default CardItem;
+export default Card;

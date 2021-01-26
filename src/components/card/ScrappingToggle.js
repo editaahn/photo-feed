@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ScrapContext from "../../context/scrap";
+import ScrapContext from "../../contexts/scrap";
 import "../../styles/components/checkbox.scss";
 
 const ScrappingToggle = ({ scrapped, id }) => {

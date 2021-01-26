@@ -1,7 +1,7 @@
-import CardFilter from './components/list/CardFilter';
-import CardList from './components/list/CardList';
-import { ScrapProvider } from './context/scrap';
-import { ListProvider } from './context/list';
+import Filter from './components/feed/Filter';
+import Feed from './components/feed/Feed';
+import { ScrapProvider } from './contexts/scrap';
+import { ListProvider } from './contexts/list';
 import "./styles/components/common.scss";
 import "./styles/layout/layout.scss";
 
@@ -10,8 +10,8 @@ function App() {
     <ListProvider>
       <ScrapProvider>
         <div className="App">
-          <CardFilter />
-          <CardList />
+          <Filter />
+          <Feed />
         </div>
       </ScrapProvider>
     </ListProvider>

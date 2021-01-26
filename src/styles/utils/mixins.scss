@@ -44,7 +44,7 @@ $default-color: #0000005e;
   }
 }
 
-@mixin emptyScreen() {
+@mixin notice() {
   min-height: 200px;
   width: 100%;
 
@@ -62,5 +62,4 @@ $default-color: #0000005e;
   p {
     font-weight: bold;
   }
-
 }

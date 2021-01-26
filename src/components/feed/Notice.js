@@ -1,12 +1,12 @@
 import React from "react";
 import "../../styles/components/card.scss";
 
-const Empty = ({ text }) => {
+const Notice = ({ text }) => {
   return (
-    <section className="empty">
+    <section className="notice">
       <p>{text}</p>
     </section>
   );
 };
 
-export default Empty;
+export default Notice;

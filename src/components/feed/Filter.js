@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import ScrapContext from "../../context/scrap";
+import ScrapContext from "../../contexts/scrap";
 import "../../styles/components/checkbox.scss";
 
-const CardFilter = () => {
+const Filter = () => {
   const { isFiltered } = useContext(ScrapContext).state;
   const { setIsFiltered } = useContext(ScrapContext).actions;
 
@@ -23,4 +23,4 @@ const CardFilter = () => {
   );
 };
 
-export default CardFilter;
+export default Filter;

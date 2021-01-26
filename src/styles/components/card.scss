@@ -45,6 +45,6 @@
   }
 }
 
-.empty {
-  @include emptyScreen();
+.notice {
+  @include notice();
 }
