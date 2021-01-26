@@ -2,20 +2,18 @@ import React, { useEffect, useState, useContext } from "react";
 import EmptyCardList from "./EmptyCardList";
 import ExistingCardList from "./ExistingCardList";
 import ScrapContext from "../../context/scrap";
-import { requestCards } from "../../libraries/request";
+import ListContext from "../../context/list";
 
 const CardList = () => {
-  const [cards, setCards] = useState([]);
-  const [loading, setLoading] = useState(undefined);
-
+  const { cards } = useContext(ListContext).state;
+  const { updateCards } = useContext(ListContext).actions;
   const { scraps } = useContext(ScrapContext).state;
+
+  const [loading, setLoading] = useState(undefined);
 
   useEffect(() => {
     setLoading(true);
-    requestCards().then(({ data }) => {
-      setCards(data);
-      setLoading(false);
-    });
+    updateCards();
   }, []);
 
   if (loading) {
