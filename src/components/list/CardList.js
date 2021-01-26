@@ -3,6 +3,7 @@ import EmptyCardList from "./EmptyCardList";
 import ExistingCardList from "./ExistingCardList";
 import ScrapContext from "../../context/scrap";
 import ListContext from "../../context/list";
+import "../../styles/components/card.scss";
 
 const CardList = () => {
   const { cards } = useContext(ListContext).state;
@@ -21,7 +22,7 @@ const CardList = () => {
   }
 
   return (
-    <section>
+    <section className="cardContainer">
       {cards.length ? (
         <ExistingCardList
           list={cards.map((card) => {

@@ -1,0 +1,46 @@
+$default-color: #0000005e;
+
+@mixin checkbox($size) {
+  .afterCheckbox {
+    content: "";
+
+    height: $size;
+    width: $size;
+    display: block;
+  }
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .checkbox {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+
+    outline: none;
+    cursor: pointer;
+
+    height: $size;
+    width: $size;
+  }
+
+  &.toggle__filter {
+    .checkbox::after {
+      border: 1px solid $default-color;
+    }
+  }
+
+  .checkbox::after {
+    @extend .afterCheckbox;
+    border-radius: 50%;
+    box-sizing: border-box;
+    
+  }
+
+  .checkbox:checked::after {
+    @extend .afterCheckbox;
+    border: none;
+  }
+}

@@ -1,0 +1,32 @@
+@import "../utils/mixins.scss";
+
+.toggle__filter {
+  @include checkbox(24px);
+
+  .checkbox:checked::after {
+    background-image: url("./images/checked.svg");
+  }
+
+  label {
+    padding-left: 6px;
+  }
+}
+
+.toggle__scrap {
+  @include checkbox(24px);
+
+  position: absolute;
+  z-index: 10;
+  bottom: 10px;
+  right: 10px;
+
+  padding: 1px;
+
+  .checkbox::after {
+    background-image: url("./images/unscrapped.svg");
+  }
+
+  .checkbox:checked::after {
+    background-image: url("./images/scrapped.svg");
+  }
+}
