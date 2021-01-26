@@ -7,7 +7,7 @@ const ExistingCardList = ({ list }) => {
   const renderedList = isFiltered ? list.filter((item) => item.scrapped) : list;
 
   return (
-    <ul>
+    <ul className="cardList">
       {renderedList.map((item, i) => (
         <CardItem
           key={item.id}

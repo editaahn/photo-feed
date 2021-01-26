@@ -3,6 +3,7 @@ import UserInfo from "./UserInfo";
 import Photo from "./Photo";
 import ScrappingToggle from "./ScrappingToggle";
 import ListContext from "../../context/list";
+import "../../styles/components/card.scss";
 
 const CardItem = ({ data, isLastOne }) => {
   const { updateCards } = useContext(ListContext).actions;
@@ -30,7 +31,7 @@ const CardItem = ({ data, isLastOne }) => {
   }, []);
 
   return (
-    <article ref={targetRef}>
+    <article ref={targetRef} className="card">
       <UserInfo name={data.nickname} src={data.profile_image_url} />
       <Photo src={data.image_url} />
       <ScrappingToggle scrapped={data.scrapped} id={data.id} />

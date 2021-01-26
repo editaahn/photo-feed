@@ -2,7 +2,7 @@ import React from "react";
 
 const UserInfo = ({ src, name }) => {
   return (
-    <address>
+    <address className="userInfo">
       <img src={src} alt="" />
       <em>{name}</em>
     </address>
