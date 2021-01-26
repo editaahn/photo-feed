@@ -1,26 +1,23 @@
 import React, { useContext } from "react";
+import Toggle from "../modules/Toggle";
 import ScrapContext from "../../contexts/scrap";
 import "../../styles/components/checkbox.scss";
 
-const Filter = () => {
+const FilterToggle = () => {
   const { isFiltered } = useContext(ScrapContext).state;
   const { setIsFiltered } = useContext(ScrapContext).actions;
 
   return (
     <section className="filterContainer">
-      <article className="toggle__filter">
-        <input
-          className="checkbox"
-          type="checkbox"
-          checked={isFiltered}
-          onChange={() => {
-            setIsFiltered(!isFiltered);
-          }}
-        />
+      <Toggle
+        toggleName="filter"
+        checkedState={isFiltered}
+        onChangeState={() => setIsFiltered(!isFiltered)}
+      >
         <label>스크랩한 것만 보기</label>
-      </article>
+      </Toggle>
     </section>
   );
 };
 
-export default Filter;
+export default FilterToggle;

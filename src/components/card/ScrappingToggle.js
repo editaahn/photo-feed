@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Toggle from "../modules/Toggle";
 import ScrapContext from "../../contexts/scrap";
 import "../../styles/components/checkbox.scss";
 
@@ -12,20 +13,16 @@ const ScrappingToggle = ({ scrapped, id }) => {
   };
 
   return (
-    <div className="toggle__scrap">
-      <input
-        className="checkbox"
-        type="checkbox"
-        aria-label="스크랩"
-        checked={scrapped}
-        onChange={() => {
-          const nextArray = scrapped
-            ? scraps.filter((scrap) => scrap !== id)
-            : [...scraps, id];
-          onScrap(nextArray);
-        }}
-      />
-    </div>
+    <Toggle
+      toggleName="scrap"
+      checkedState={scrapped}
+      onChangeState={() => {
+        const nextArray = scrapped
+          ? scraps.filter((scrap) => scrap !== id)
+          : [...scraps, id];
+        onScrap(nextArray);
+      }}
+    />
   );
 };
 

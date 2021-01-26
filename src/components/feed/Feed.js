@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import Notice from "./Notice";
+import Notice from "../modules/Notice";
 import List from "./List";
 import ScrapContext from "../../contexts/scrap";
 import ListContext from "../../contexts/list";

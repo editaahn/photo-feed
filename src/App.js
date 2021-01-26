@@ -1,4 +1,4 @@
-import Filter from './components/feed/Filter';
+import FilterToggle from './components/feed/FilterToggle';
 import Feed from './components/feed/Feed';
 import { ScrapProvider } from './contexts/scrap';
 import { ListProvider } from './contexts/list';
@@ -10,7 +10,7 @@ function App() {
     <ListProvider>
       <ScrapProvider>
         <div className="App">
-          <Filter />
+          <FilterToggle />
           <Feed />
         </div>
       </ScrapProvider>
