@@ -6,21 +6,19 @@ import ListContext from "../../context/list";
 import "../../styles/components/card.scss";
 
 const CardList = () => {
-  const { cards } = useContext(ListContext).state;
-  const { updateCards } = useContext(ListContext).actions;
+  const { cards, loading } = useContext(ListContext).state;
+  const { updateCards, setLoading } = useContext(ListContext).actions;
   const { scraps, isFiltered } = useContext(ScrapContext).state;
 
-  const [loading, setLoading] = useState(undefined);
   const [notice, setNotice] = useState("");
 
   useEffect(() => {
     setLoading(true);
-    updateCards().then(({ message }) => message && setNotice(message));
+    updateCards()
+      .then(({ message }) => message && setNotice(message))
+      .then(() => setLoading(false));
   }, []);
-
-  if (loading) {
-    // 로딩 중일 때 처리
-  }
+  
   return (
     <>
       {cards.length > 0 && 
@@ -32,6 +30,7 @@ const CardList = () => {
           setNotice={setNotice}
         />
       }
+      {loading && <Empty text="이미지를 불러오는 중입니다." />}
       {notice && !isFiltered && <Empty text={notice} />}
     </>
   );

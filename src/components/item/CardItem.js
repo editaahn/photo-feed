@@ -6,7 +6,7 @@ import ListContext from "../../context/list";
 import "../../styles/components/card.scss";
 
 const CardItem = ({ data, isLastOne, setNotice }) => {
-  const { updateCards } = useContext(ListContext).actions;
+  const { updateCards, setLoading } = useContext(ListContext).actions;
 
   const targetRef = useRef(null);
   const observerRef = useRef(null);
@@ -18,7 +18,10 @@ const CardItem = ({ data, isLastOne, setNotice }) => {
       }
       if (item.isIntersecting) {
         io.unobserve(item.target);
-        updateCards().then(({ message }) => message && setNotice(message));
+        setLoading(true);
+        updateCards()
+          .then(({ message }) => message && setNotice(message))
+          .then(() => setLoading(false));
       }
     });
   };
