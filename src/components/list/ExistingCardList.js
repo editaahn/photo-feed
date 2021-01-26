@@ -8,10 +8,11 @@ const ExistingCardList = ({ list }) => {
 
   return (
     <ul>
-      {renderedList.map((item) => (
+      {renderedList.map((item, i) => (
         <CardItem
           key={item.id}
           data={item}
+          isLastOne={i === renderedList.length - 1}
         />
       ))}
     </ul>
