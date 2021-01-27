@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/components/checkbox.scss";
 
 const Toggle = ({ toggleName, checkedState, onChangeState, children }) => {
   return (

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Toggle from "../modules/Toggle";
 import ScrapContext from "../../contexts/scrap";
-import "../../styles/components/checkbox.scss";
 
 const FilterToggle = () => {
   const { isFiltered } = useContext(ScrapContext).state;

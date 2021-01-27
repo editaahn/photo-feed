@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Toggle from "../modules/Toggle";
 import ScrapContext from "../../contexts/scrap";
-import "../../styles/components/checkbox.scss";
 
 const ScrappingToggle = ({ scrapped, id }) => {
   const { scraps } = useContext(ScrapContext).state;
