@@ -22,7 +22,6 @@ const Feed = () => {
 
   return (
     <>
-      {toastMessage && <ScrappingToast text={toastMessage} />}
       {cards.length > 0 && (
         <List
           list={cards.map((card) => {
@@ -34,6 +33,7 @@ const Feed = () => {
       )}
       {loading && <Notice text="이미지를 불러오는 중입니다." />}
       {notice && !isFiltered && <Notice text={notice} />}
+      {toastMessage && <ScrappingToast text={toastMessage} />}
     </>
   );
 };
