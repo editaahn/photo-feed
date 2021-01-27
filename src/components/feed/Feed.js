@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import Notice from "../modules/Notice";
 import List from "./List";
-import ScrappingToast from "./ScrappingToast";
+import Toast from "../modules/Toast";
 import ScrapContext from "../../contexts/scrap";
 import ListContext from "../../contexts/list";
 import "../../styles/components/card.scss";
@@ -33,7 +33,7 @@ const Feed = () => {
       )}
       {loading && <Notice text="이미지를 불러오는 중입니다." />}
       {notice && !isFiltered && <Notice text={notice} />}
-      {toastMessage && <ScrappingToast text={toastMessage} />}
+      {toastMessage && <Toast name="scrappingToast" text={toastMessage} />}
     </>
   );
 };
