@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import usePortal from "./usePortal";
-import "../../styles/components/card.scss";
+import "../../styles/components/toast.scss";
 
 const Toast = ({ name, text }) => {
   const $target = usePortal(name);
