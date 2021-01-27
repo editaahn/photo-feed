@@ -1,14 +1,6 @@
 $default-color: #0000005e;
 
 @mixin checkbox($size) {
-  .afterCheckbox {
-    content: "";
-
-    height: $size;
-    width: $size;
-    display: block;
-  }
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -26,20 +18,23 @@ $default-color: #0000005e;
     width: $size;
   }
 
-  &.toggle__filter {
-    .checkbox::after {
-      border: 1px solid $default-color;
-    }
+  // .checkboxIcon - after 가상선택자에 아이콘 디자인 적용
+  .checkboxIcon {
+    content: "";
+
+    height: $size;
+    width: $size;
+    display: block;
   }
 
   .checkbox::after {
-    @extend .afterCheckbox;
+    @extend .checkboxIcon;
     border-radius: 50%;
     box-sizing: border-box;
   }
 
   .checkbox:checked::after {
-    @extend .afterCheckbox;
+    @extend .checkboxIcon;
     border: none;
   }
 }
@@ -54,9 +49,10 @@ $default-color: #0000005e;
 
   ::before {
     content: "💬";
-    display: block;
     font-size: 40px;
     text-align: center;
+
+    display: block;
   }
 
   p {

@@ -1,7 +1,14 @@
 @import "../utils/mixins.scss";
 
+// .checkbox::after - 체크되지 않았을 때
+// .checkbox:checked::after - 체크됐을 때
+
 .toggle__filter {
   @include checkbox(24px);
+
+  .checkbox::after {
+    border: 1px solid $default-color;
+  }
 
   .checkbox:checked::after {
     background-image: url("./images/checked.svg");
