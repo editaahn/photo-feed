@@ -3,8 +3,7 @@ import Toggle from "../modules/Toggle";
 import ScrapContext from "../../contexts/scrap";
 
 const ScrappingToggle = ({ scrapped, id }) => {
-  const { scraps } = useContext(ScrapContext).state;
-  const { setScraps, setToast } = useContext(ScrapContext).actions;
+  const { scraps, setScraps, setToast } = useContext(ScrapContext);
 
   const onScrap = (nextArray) => {
     setScraps(nextArray);

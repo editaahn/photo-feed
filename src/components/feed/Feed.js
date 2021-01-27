@@ -1,25 +1,25 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import Notice from "../modules/Notice";
 import List from "./List";
 import Toast from "../modules/Toast";
 import ScrapContext from "../../contexts/scrap";
 import ListContext from "../../contexts/list";
+import NoticeContext from "../../contexts/notice";
 import "../../styles/components/card.scss";
 
 const Feed = () => {
-  const { cards } = useContext(ListContext).state;
-  const { scraps, toastMessage } = useContext(ScrapContext).state;
-
-  const { updateCards, setLoading } = useContext(ListContext).actions;
-
-  const [notice, setNotice] = useState("");
+  const { cards, updateCards, setLoading } = useContext(ListContext);
+  const { scraps, toastMessage } = useContext(ScrapContext);
+  const { notice, setNotice } = useContext(NoticeContext);
 
   useEffect(() => {
     setLoading(true);
     setNotice("컨텐츠를 불러오는 중입니다.");
     updateCards()
       .then(({ message }) => setNotice(message || ""))
-      .then(() => setLoading(false));
+      .then(() => {
+        setLoading(false);
+      });
   }, []);
 
   return (

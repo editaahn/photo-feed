@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import Card from "../card/Card";
 import ScrapContext from "../../contexts/scrap";
+import NoticeContext from "../../contexts/notice";
 
-const List = ({ list, setNotice }) => {
-  const { isFiltered } = useContext(ScrapContext).state;
+const List = ({ list }) => {
+  const { isFiltered } = useContext(ScrapContext);
+  const { setNotice } = useContext(NoticeContext);
   const renderedList = isFiltered ? list.filter((item) => item.scrapped) : list;
 
   !renderedList.length &&

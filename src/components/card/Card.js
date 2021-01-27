@@ -3,10 +3,12 @@ import UserInfo from "./UserInfo";
 import Photo from "./Photo";
 import ScrappingToggle from "./ScrappingToggle";
 import ListContext from "../../contexts/list";
+import NoticeContext from "../../contexts/notice";
 import "../../styles/components/card.scss";
 
-const Card = ({ data, isLastOne, setNotice }) => {
-  const { updateCards, setLoading } = useContext(ListContext).actions;
+const Card = ({ data, isLastOne }) => {
+  const { updateCards, setLoading } = useContext(ListContext);
+  const { setNotice } = useContext(NoticeContext);
 
   const targetRef = useRef(null);
   const observerRef = useRef(null);
