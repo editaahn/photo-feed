@@ -2,11 +2,11 @@ import React, { useRef, useContext, useEffect } from "react";
 import UserInfo from "./UserInfo";
 import Photo from "./Photo";
 import ScrappingToggle from "./ScrappingToggle";
-import ListContext from "../../context/list";
+import ListContext from "../../contexts/list";
 import "../../styles/components/card.scss";
 
-const CardItem = ({ data, isLastOne }) => {
-  const { updateCards } = useContext(ListContext).actions;
+const Card = ({ data, isLastOne, setNotice }) => {
+  const { updateCards, setLoading } = useContext(ListContext).actions;
 
   const targetRef = useRef(null);
   const observerRef = useRef(null);
@@ -18,7 +18,10 @@ const CardItem = ({ data, isLastOne }) => {
       }
       if (item.isIntersecting) {
         io.unobserve(item.target);
-        updateCards();
+        setLoading(true);
+        updateCards()
+          .then(({ message }) => message && setNotice(message))
+          .then(() => setLoading(false));
       }
     });
   };
@@ -39,4 +42,4 @@ const CardItem = ({ data, isLastOne }) => {
   );
 };
 
-export default CardItem;
+export default Card;
