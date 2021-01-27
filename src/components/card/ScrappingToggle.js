@@ -16,12 +16,17 @@ const ScrappingToggle = ({ scrapped, id }) => {
       toggleName="scrap"
       checkedState={scrapped}
       onChangeState={() => {
+        if (scrapped) {
+          const answer = window.confirm("스크랩 취소하시겠습니까?");
+          if (!answer) return;
+        }
+
         const nextArray = scrapped
           ? scraps.filter((scrap) => scrap !== id)
           : [...scraps, id];
         onScrap(nextArray);
 
-        const toast = scrapped ? "스크랩 취소되었습니다." : "스크랩되었습니다";
+        const toast = scrapped ? "스크랩 취소되었습니다." : "스크랩되었습니다.";
         setToast(toast);
       }}
     />
