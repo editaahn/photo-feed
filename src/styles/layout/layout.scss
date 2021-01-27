@@ -1,8 +1,9 @@
 .App {
   width: calc(100vw - 60px);
-  padding: 30px 30px;
+  height: calc(100vh - 30px);
+  padding: 30px 30px 0 30px;
 
-  overflow-x: hidden;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
@@ -31,9 +32,9 @@
   
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   box-sizing: content-box;
+  overflow-y: scroll;
 
   .cardList {
     width: 100%;
