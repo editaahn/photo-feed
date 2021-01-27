@@ -4,7 +4,7 @@ import ScrapContext from "../../contexts/scrap";
 
 const ScrappingToggle = ({ scrapped, id }) => {
   const { scraps } = useContext(ScrapContext).state;
-  const { setScraps } = useContext(ScrapContext).actions;
+  const { setScraps, setToast } = useContext(ScrapContext).actions;
 
   const onScrap = (nextArray) => {
     setScraps(nextArray);
@@ -20,6 +20,9 @@ const ScrappingToggle = ({ scrapped, id }) => {
           ? scraps.filter((scrap) => scrap !== id)
           : [...scraps, id];
         onScrap(nextArray);
+
+        const toast = scrapped ? "스크랩 취소되었습니다." : "스크랩되었습니다";
+        setToast(toast);
       }}
     />
   );
