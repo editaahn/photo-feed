@@ -2,12 +2,13 @@ import React, { createContext, useState } from "react";
 import { requestCards } from "../libraries/request";
 
 const ListContext = createContext({
-  state: { page: 1, cards: [], loading: false },
-  actions: {
-    setPage: () => {},
-    setCards: () => {},
-    setLoading: () => {},
-  },
+  page: 1,
+  cards: [],
+  loading: false,
+
+  setPage: () => {},
+  updateCards: () => {},
+  setLoading: () => {},
 });
 
 const ListProvider = ({ children }) => {
@@ -25,8 +26,12 @@ const ListProvider = ({ children }) => {
   };
 
   const value = {
-    state: { page, cards, loading },
-    actions: { setPage, updateCards, setLoading },
+    page,
+    cards,
+    loading,
+    setPage,
+    updateCards,
+    setLoading,
   };
 
   return <ListContext.Provider value={value}>{children}</ListContext.Provider>;
