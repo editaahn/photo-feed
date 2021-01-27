@@ -1,4 +1,4 @@
-$default-color: #0000005e;
+$default-color: #424242;
 
 @mixin checkbox($size) {
   display: flex;
@@ -51,6 +51,7 @@ $default-color: #0000005e;
     content: "💬";
     font-size: 40px;
     text-align: center;
+    color: $default-color;
 
     display: block;
   }
