@@ -12,7 +12,7 @@ const ListContext = createContext({
 });
 
 const ListProvider = ({ children }) => {
-  const [page, setPage] = useState(5);
+  const [page, setPage] = useState(1);
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
 
