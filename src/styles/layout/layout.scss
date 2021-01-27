@@ -37,18 +37,20 @@
 
   .cardList {
     width: 100%;
+
     display: grid;
     grid-template-columns: repeat(4, minmax(268px, 1fr));
   }
 
-  @media (max-width: 992px) {
-    .cardList {
-      grid-template-columns: repeat(3, minmax(268px, 1fr));
-    }
-  }
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     .cardList {
       grid-template-columns: repeat(2, minmax(268px, 1fr));
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cardList {
+      grid-template-columns: repeat(1, minmax(268px, 1fr));
     }
   }
 }
