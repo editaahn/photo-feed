@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from "react";
+import React, { useContext } from "react";
 import Toggle from "../common/Toggle";
 import ScrapContext from "../../contexts/scrap";
 import NoticeContext from "../../contexts/notice";
