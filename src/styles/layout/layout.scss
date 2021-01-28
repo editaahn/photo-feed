@@ -11,9 +11,12 @@
 
   section {
     width: 100%;
-    max-width: 1162px;
 
-    display: flex;
+    .wrapper {
+      max-width: 1162px;
+      margin: 0 auto;
+      display: flex;
+    }
   }
 
   section + section {
@@ -39,7 +42,6 @@
     grid-column-gap: 20px;
     grid-row-gap: 30px;
     grid-template-columns: repeat(4, minmax(268px, 1fr));
-
   }
 
   @media (max-width: 1200px) {

@@ -24,14 +24,16 @@ const Feed = () => {
 
   return (
     <section className="cardContainer">
-      {cards.length > 0 && (
-        <List
-          list={cards.map((card) => {
-            card.scrapped = scraps.includes(card.id);
-            return card;
-          })}
-        />
-      )}
+      <div className="wrapper">
+        {cards.length > 0 && (
+          <List
+            list={cards.map((card) => {
+              card.scrapped = scraps.includes(card.id);
+              return card;
+            })}
+          />
+        )}
+      </div>
       {notice && <Notice text={notice} />}
       {toastMessage && <Toast name="scrappingToast" text={toastMessage} />}
     </section>

@@ -14,13 +14,15 @@ const FilterToggle = () => {
 
   return (
     <section className="filterContainer">
-      <Toggle
-        toggleName="filter"
-        checkedState={isFiltered}
-        onChangeState={onChange}
-      >
-        <label>스크랩한 것만 보기</label>
-      </Toggle>
+      <div className="wrapper">
+        <Toggle
+          toggleName="filter"
+          checkedState={isFiltered}
+          onChangeState={onChange}
+        >
+          <label>스크랩한 것만 보기</label>
+        </Toggle>
+      </div>
     </section>
   );
 };
