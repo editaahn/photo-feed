@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
-import Notice from "../modules/Notice";
+import Notice from "../common/Notice";
 import List from "./List";
-import Toast from "../modules/Toast";
+import Toast from "../common/Toast";
 import ScrapContext from "../../contexts/scrap";
 import ListContext from "../../contexts/list";
 import NoticeContext from "../../contexts/notice";
