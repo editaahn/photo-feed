@@ -15,7 +15,7 @@
 
     display: flex;
   }
-  
+
   section + section {
     margin-top: 30px;
   }
@@ -39,17 +39,12 @@
     grid-column-gap: 20px;
     grid-row-gap: 30px;
     grid-template-columns: repeat(4, minmax(268px, 1fr));
+
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1200px) {
     .cardList {
-      grid-template-columns: repeat(2, minmax(268px, 1fr));
-    }
-  }
-
-  @media (max-width: 767px) {
-    .cardList {
-      grid-template-columns: repeat(1, minmax(268px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
     }
   }
 }
