@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Photo Feed
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 사용 기술
+- React
+- 상태 관리: Context API
+- Styling: Sass
 
-## Available Scripts
+## 기본 요구 사항 
+1. 디자인에 부합하는 웹 PC화면 구현
+2. 사진 리스트 구현
+- 사용자가 어느정도 스크롤을 진행함에 따라 지속적으로 다음 페이지 사진을 불러온다.
+- 빈 값이 나올때까지 지속적으로 Ajax를 통해서 다음 페이지를 불러온다.
+3. 스크랩 기능
+- 각각의 사진을 스크랩 할 수 있다.
+- 스크랩 버튼을 누른 경우 localStorage를 이용하여 스크랩한 사진 정보를 저장한다.
+- 스크랩이 된 경우에는 스크랩 버튼 색상이 파란색으로 변한다.
+- 파란색인 경우에는 스크랩을 취소한다.
+- 이후 새로고침 하였을때, 스크랩된 사진의 경우 스크랩된 상태로 표시되어야 한다.
+4. 필터 기능
+- 스크랩한 것만 모아보기 기능을 사용한 경우 스크랩된 사진만 불러온다.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 추가 구현 사항
+5. 스크랩/스크랩 취소할때 사용자와의 인터랙션
+- 처리 후 토스트팝업을 출력한다.
+- 취소 시 사용자의 의사를 확인한다.
+6. 기타
+- 필터 기능 상단 fixed
+- 그리드 및 반응형
+- Notice 출력: 로딩 / 로드된 컨텐츠 없을 시 / 무한 스크롤 종료 시 등

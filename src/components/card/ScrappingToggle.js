@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Toggle from "../modules/Toggle";
+import Toggle from "../common/Toggle";
 import ScrapContext from "../../contexts/scrap";
 
 const ScrappingToggle = ({ scrapped, id }) => {
