@@ -42,7 +42,7 @@ const Card = ({ data, isLastOne }) => {
     <article ref={targetRef} className="card">
       <UserInfo name={data.nickname} src={data.profile_image_url} />
       <Photo src={data.image_url} />
-      <ScrappingToggle scrapped={data.scrapped} id={data.id} />
+      <ScrappingToggle card={data}/>
     </article>
   );
 };

@@ -4,9 +4,9 @@ import ScrapContext from "../../contexts/scrap";
 import NoticeContext from "../../contexts/notice";
 
 const List = ({ list }) => {
-  const { isFiltered } = useContext(ScrapContext);
+  const { scraps, isFiltered } = useContext(ScrapContext);
   const { setNotice } = useContext(NoticeContext);
-  const renderedList = isFiltered ? list.filter((item) => item.scrapped) : list;
+  const renderedList = isFiltered ? scraps : list;
 
   !renderedList.length &&
     isFiltered &&

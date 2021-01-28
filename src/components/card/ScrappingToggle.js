@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import Toggle from "../common/Toggle";
 import ScrapContext from "../../contexts/scrap";
 
-const ScrappingToggle = ({ scrapped, id }) => {
+const ScrappingToggle = ({ card }) => {
+  const { scrapped, id } = card;
   const { scraps, setScraps, setToast } = useContext(ScrapContext);
 
   const onScrap = (nextArray) => {
@@ -17,8 +18,8 @@ const ScrappingToggle = ({ scrapped, id }) => {
     }
 
     const nextArray = scrapped
-      ? scraps.filter((scrap) => scrap !== id)
-      : [...scraps, id];
+      ? scraps.filter((scrap) => scrap.id !== id)
+      : [...scraps, { ...card, scrapped: !scrapped }];
     onScrap(nextArray);
 
     const toast = scrapped ? "스크랩 취소되었습니다." : "스크랩되었습니다.";

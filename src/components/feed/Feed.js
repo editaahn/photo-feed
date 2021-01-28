@@ -28,7 +28,7 @@ const Feed = () => {
         {cards.length > 0 && (
           <List
             list={cards.map((card) => {
-              card.scrapped = scraps.includes(card.id);
+              card.scrapped = scraps.some((scrap) => scrap.id === card.id);
               return card;
             })}
           />
